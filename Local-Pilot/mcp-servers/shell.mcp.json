@@ -1,0 +1,41 @@
+{
+  "mcpServer": {
+    "name": "Shell Command Server",
+    "description": "Execute shell commands on the local system",
+    "version": "1.0.0",
+    "tools": [
+      {
+        "name": "execute_command",
+        "description": "Execute a shell command",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "command": {
+              "type": "string",
+              "description": "The command to execute"
+            },
+            "workingDir": {
+              "type": "string",
+              "description": "Working directory for the command (optional)"
+            }
+          },
+          "required": ["command"]
+        }
+      },
+      {
+        "name": "check_process",
+        "description": "Check if a process is running",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "processName": {
+              "type": "string",
+              "description": "Name of the process to check"
+            }
+          },
+          "required": ["processName"]
+        }
+      }
+    ]
+  }
+}
